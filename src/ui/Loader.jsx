@@ -1,4 +1,5 @@
-import react from 'react'
+/* eslint-disable */
+import react from 'react';
 
 export default function Loader() {
   return (
