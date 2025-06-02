@@ -1,28 +1,27 @@
-/* eslint-disable */
-import Header from "./Header";
-import Loader from "./Loader";
-import CartOverview from './../features/cart/CartOverview';
-import { Outlet, useNavigate } from "react-router-dom";
+import Header from './Header';
+import Loader from './Loader';
+import CartOverview from '../features/cart/CartOverview';
+import { Outlet, useNavigation } from 'react-router-dom';
 
-export default function AppLayout() 
-{
+function AppLayout() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
 
-    const navigation = useNavigate();
+  return (
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+      {isLoading && <Loader />}
 
-    const isLoading = navigation.state === 'loading';
+      <Header />
 
-    return (
-        <div className="layout">
+      <div className="overflow-scroll">
+        <main className="mx-auto max-w-3xl">
+          <Outlet />
+        </main>
+      </div>
 
-            {isLoading && <Loader />}
-
-            <Header />
-
-            <main>
-                <Outlet />
-            </main>
-
-            <CartOverview />
-        </div>
-    );
+      <CartOverview />
+    </div>
+  );
 }
+
+export default AppLayout;
