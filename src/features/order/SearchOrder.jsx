@@ -11,7 +11,7 @@ function SearchOrder() {
   function handleSubmit(e){
     e.preventDeafult();
     if (!query) return;
-    navigate(`/search/${query}`);
+    navigate(`/order/${query}`);
     setQuery("");
   }
 
