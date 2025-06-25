@@ -2,7 +2,7 @@
 - Web Application realizzata in React +vite in cui e possibile ordinare cibo da un menu
 
 ###  Tecnologie Usate
-- nodejs
+- Nodejs
 - Vite
 - React
 - Html
